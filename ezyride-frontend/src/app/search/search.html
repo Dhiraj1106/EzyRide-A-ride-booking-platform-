@@ -1,0 +1,191 @@
+<div class="page">
+    <app-header></app-header>
+
+    <main class="wrap">
+
+        <section class="trip card">
+            <div>
+                <small>YOUR TRIP</small>
+
+                <strong>
+                    {{ pickup }}
+                    <span>→</span>
+                    {{ destination }}
+                </strong>
+
+                <p>
+                    {{ date }} · {{ time }} · {{ passengers }} passengers
+                </p>
+            </div>
+
+            <button (click)="editTrip()">Edit</button>
+        </section>
+
+
+        <h2>Choose your ride</h2>
+
+        <p class="sub">
+            Fares include taxes. Prices are demo data.
+        </p>
+
+
+        @for (r of rides; track r.name) {
+
+            <button
+                    class="ride card"
+                    [class.selected]="selected === r.name"
+                    (click)="selectRide(r.name)"
+            >
+
+        <span class="ride-icon">
+          {{ r.icon }}
+        </span>
+
+                <span class="ride-copy">
+
+          <strong>
+            {{ r.name }}
+          </strong>
+
+          <small>
+            {{ r.description }}
+          </small>
+
+          <small>
+            {{ r.meta }}
+          </small>
+
+        </span>
+
+                <span class="fare">
+
+          ₹{{ r.fare }}
+
+                    <small>
+            {{ selected === r.name ? 'Selected' : 'Select' }}
+          </small>
+
+        </span>
+
+            </button>
+
+        }
+
+
+        <!-- RIDEMATE -->
+
+        <button
+                class="ridemate card"
+                (click)="findMatches()"
+        >
+
+            <span>🤝</span>
+
+            <span>
+
+        <strong>
+          RideMate
+          <em>SIGNATURE</em>
+        </strong>
+
+        <small>
+          Find people travelling your way
+        </small>
+
+        <small>
+          3 matches nearby · Shared
+        </small>
+
+      </span>
+
+            <b>
+                From ₹70/person
+
+                <br>
+
+                <small>
+                    Find matches →
+                </small>
+
+            </b>
+
+        </button>
+
+
+        <!-- AVAILABLE DRIVERS -->
+
+        <section class="driver-section">
+
+            <div class="section-title">
+
+                <div>
+
+                    <h3>
+                        Available drivers
+                    </h3>
+
+                    <small>
+                        1 option for your route
+                    </small>
+
+                </div>
+
+                <button>
+                    ⚱ Filters
+                </button>
+
+            </div>
+
+
+            <div class="driver card">
+
+        <span class="driver-avatar">
+          {{ driver.initials }}
+        </span>
+
+                <span>
+
+          <strong>
+            {{ driver.name }}
+          </strong>
+
+          <small>
+            ⭐ {{ driver.rating }} · {{ driver.trips }} trips
+          </small>
+
+          <small>
+            {{ driver.car }}
+          </small>
+
+          <small>
+            4 min away · departs {{ time }} · 1 seat
+          </small>
+
+        </span>
+
+                <b>
+                    ₹{{ driver.fare }}
+                </b>
+
+
+                <button
+                        (click)="selectRide('Driver')"
+                >
+                    View Ride
+                </button>
+
+
+                <button
+                        class="request"
+                        (click)="requestRide()"
+                >
+                    Request Ride
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>

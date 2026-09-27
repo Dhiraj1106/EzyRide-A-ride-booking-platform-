@@ -1,0 +1,64 @@
+<div class="register-container">
+
+  <div class="register-box">
+
+    <h2>Create Account</h2>
+    <p>Register to continue with EzyRide</p>
+
+    <form (ngSubmit)="registerUser()">
+
+      <label>Name</label>
+      <input
+        type="text"
+        name="name"
+        [(ngModel)]="user.name"
+        placeholder="Enter your name"
+        required
+      >
+
+      <label>Email</label>
+      <input
+        type="email"
+        name="email"
+        [(ngModel)]="user.email"
+        placeholder="Enter your email"
+        required
+      >
+
+      <label>Password</label>
+      <input
+        type="password"
+        name="password"
+        [(ngModel)]="user.password"
+        placeholder="Enter your password"
+        required
+      >
+
+      <label>Phone</label>
+      <input
+        type="text"
+        name="phone"
+        [(ngModel)]="user.phone"
+        placeholder="Enter your phone number"
+        required
+      >
+
+      <label>Role</label>
+      <select>
+        name="role"
+        [(ngModel)]="user.role">
+
+        <option value="USER">User</option>
+        <option value="DRIVER">Driver</option>
+
+      </select>
+
+      <button type="submit">
+        Register
+      </button>
+
+    </form>
+
+  </div>
+
+</div>
