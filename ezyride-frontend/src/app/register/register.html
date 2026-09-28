@@ -1,0 +1,271 @@
+<div class="register-page">
+
+  <!-- Top Navigation -->
+  <header class="top-bar">
+
+    <div class="logo-area">
+      <div class="logo-mark">
+        <span>↗</span>
+      </div>
+
+      <div class="logo-text">
+        <h2>EzyRide</h2>
+        <p>MAKING EVERY RIDE EASY</p>
+      </div>
+    </div>
+
+    <div class="login-link">
+      Already have an account?
+      <a routerLink="/login">Sign in</a>
+    </div>
+
+  </header>
+
+
+  <main class="register-main">
+
+    <!-- Registration Form -->
+    <section class="register-card">
+
+      <div class="card-label">
+        CREATE ACCOUNT
+      </div>
+
+      <h1>Start your journey.</h1>
+
+      <p class="subtitle">
+        Join EzyRide and make every ride easier.
+      </p>
+
+
+      <form (ngSubmit)="registerUser()">
+
+        <!-- Name -->
+        <div class="field">
+
+          <label>Full Name</label>
+
+          <input
+            type="text"
+            name="name"
+            [(ngModel)]="user.name"
+            placeholder="Enter your full name"
+            required
+          >
+
+        </div>
+
+
+        <!-- Email -->
+        <div class="field">
+
+          <label>Email Address</label>
+
+          <input
+            type="email"
+            name="email"
+            [(ngModel)]="user.email"
+            placeholder="you@example.com"
+            required
+          >
+
+        </div>
+
+
+        <!-- Phone -->
+        <div class="field">
+
+          <label>Phone Number</label>
+
+          <input
+            type="tel"
+            name="phone"
+            [(ngModel)]="user.phone"
+            placeholder="Enter your phone number"
+            required
+          >
+
+        </div>
+
+
+        <!-- Password -->
+        <div class="field">
+
+          <label>Password</label>
+
+          <input
+            type="password"
+            name="password"
+            [(ngModel)]="user.password"
+            placeholder="Create a password"
+            required
+          >
+
+        </div>
+
+
+        <!-- Role -->
+        <div class="field">
+
+          <label>Account Type</label>
+
+          <div class="role-options">
+
+            <label class="role-card">
+
+              <input
+                type="radio"
+                name="role"
+                value="USER"
+                [(ngModel)]="user.role"
+              >
+
+              <div>
+                <strong>Passenger</strong>
+                <span>Book and share rides</span>
+              </div>
+
+            </label>
+
+
+            <label class="role-card">
+
+              <input
+                type="radio"
+                name="role"
+                value="DRIVER"
+                [(ngModel)]="user.role"
+              >
+
+              <div>
+                <strong>Driver</strong>
+                <span>Offer rides to others</span>
+              </div>
+
+            </label>
+
+          </div>
+
+        </div>
+
+
+        <button
+          type="submit"
+          class="register-button">
+
+          <span>Create Account</span>
+          <span>→</span>
+
+        </button>
+
+      </form>
+
+
+      <p class="bottom-text">
+        By creating an account, you agree to use EzyRide responsibly.
+      </p>
+
+    </section>
+
+
+    <!-- Right Visual -->
+    <section class="journey-section">
+
+      <div class="journey-content">
+
+        <div class="journey-tag">
+          YOUR JOURNEY STARTS HERE
+        </div>
+
+        <h2>
+          One platform.<br>
+          <span>Every journey.</span>
+        </h2>
+
+        <p>
+          Whether you're looking for a ride or sharing one,
+          EzyRide connects people travelling in the same direction.
+        </p>
+
+
+        <!-- Journey Route -->
+        <div class="journey-route">
+
+          <div class="route-point">
+            <div class="point-icon">●</div>
+
+            <div>
+              <small>START</small>
+              <strong>Your location</strong>
+            </div>
+          </div>
+
+
+          <div class="vertical-route">
+            <div class="moving-dot"></div>
+          </div>
+
+
+          <div class="route-point">
+            <div class="point-icon destination">●</div>
+
+            <div>
+              <small>DESTINATION</small>
+              <strong>Wherever you go</strong>
+            </div>
+          </div>
+
+        </div>
+
+
+        <!-- Features -->
+        <div class="feature-grid">
+
+          <div class="feature">
+            <div class="feature-number">01</div>
+
+            <div>
+              <strong>RideMate</strong>
+              <p>Find people travelling your way.</p>
+            </div>
+          </div>
+
+
+          <div class="feature">
+            <div class="feature-number">02</div>
+
+            <div>
+              <strong>Safe Rides</strong>
+              <p>Verified profiles and trip safety.</p>
+            </div>
+          </div>
+
+
+          <div class="feature">
+            <div class="feature-number">03</div>
+
+            <div>
+              <strong>EzyTalk</strong>
+              <p>Get help whenever you need it.</p>
+            </div>
+          </div>
+
+
+          <div class="feature">
+            <div class="feature-number">04</div>
+
+            <div>
+              <strong>Live Tracking</strong>
+              <p>Stay connected during every trip.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+</div>

@@ -1,0 +1,261 @@
+<div class="login-page">
+
+  <!-- Background decorative road -->
+  <div class="road road-one"></div>
+  <div class="road road-two"></div>
+
+  <!-- Top Logo -->
+  <header class="top-bar">
+
+    <div class="logo-area">
+      <div class="logo-mark">
+        <span>↗</span>
+      </div>
+
+      <div class="logo-text">
+        <h2>EzyRide</h2>
+        <p>MAKING EVERY RIDE EASY</p>
+      </div>
+    </div>
+
+    <div class="top-links">
+      <span>Safe Rides</span>
+      <span>RideMate</span>
+      <span>EzyTalk</span>
+    </div>
+
+  </header>
+
+
+  <!-- Main Content -->
+  <main class="main-content">
+
+    <!-- Left Content -->
+    <section class="intro-section">
+
+      <div class="status-pill">
+        <span class="status-dot"></span>
+        Your journey starts here
+      </div>
+
+      <h1>
+        Move smarter.<br>
+        <span>Ride together.</span>
+      </h1>
+
+      <p class="intro-text">
+        Find your perfect ride, connect with people
+        going your way and make every journey easier.
+      </p>
+
+
+      <!-- Mini Ride Card -->
+      <div class="ride-preview">
+
+        <div class="location-row">
+
+          <div class="location-icon pickup">
+            ●
+          </div>
+
+          <div>
+            <small>FROM</small>
+            <strong>Your location</strong>
+          </div>
+
+        </div>
+
+
+        <div class="route-line">
+          <span></span>
+        </div>
+
+
+        <div class="location-row">
+
+          <div class="location-icon destination">
+            ●
+          </div>
+
+          <div>
+            <small>TO</small>
+            <strong>Your destination</strong>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="benefits">
+
+        <div>
+          <strong>01</strong>
+          <span>Find a ride</span>
+        </div>
+
+        <div>
+          <strong>02</strong>
+          <span>Match with people</span>
+        </div>
+
+        <div>
+          <strong>03</strong>
+          <span>Enjoy the journey</span>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Login Card -->
+    <section class="login-section">
+
+      <div class="login-card">
+
+        <div class="card-top">
+
+          <span class="card-label">
+            ACCOUNT ACCESS
+          </span>
+
+          <div class="secure">
+            <span>●</span>
+            Secure
+          </div>
+
+        </div>
+
+
+        <div class="login-heading">
+
+          <h2>Welcome back.</h2>
+
+          <p>
+            Sign in and continue your journey.
+          </p>
+
+        </div>
+
+
+        <form (ngSubmit)="loginUser()">
+
+
+          <!-- Email -->
+          <div class="field">
+
+            <label>Email address</label>
+
+            <div class="input-box">
+
+              <span class="icon">✉</span>
+
+              <input
+                type="email"
+                name="email"
+                [(ngModel)]="user.email"
+                placeholder="you@example.com"
+                required
+              >
+
+            </div>
+
+          </div>
+
+
+          <!-- Password -->
+          <div class="field">
+
+            <div class="label-line">
+
+              <label>Password</label>
+
+              <a href="#">
+                Forgot password?
+              </a>
+
+            </div>
+
+            <div class="input-box">
+
+              <span class="icon">⌕</span>
+
+              <input
+                type="password"
+                name="password"
+                [(ngModel)]="user.password"
+                placeholder="Enter your password"
+                required
+              >
+
+            </div>
+
+          </div>
+
+
+          <!-- Login -->
+          <button
+            type="submit"
+            class="login-button">
+
+            <span>Sign in</span>
+
+            <span class="arrow">→</span>
+
+          </button>
+
+
+        </form>
+
+
+        <!-- Divider -->
+        <div class="divider">
+          <span>New to EzyRide?</span>
+        </div>
+
+
+        <!-- Register -->
+        <a
+          routerLink="/register"
+          class="create-account">
+
+          Create your account
+
+          <span>↗</span>
+
+        </a>
+
+
+        <!-- Bottom Features -->
+        <div class="mini-features">
+
+          <div>
+            <span>✓</span>
+            Verified profiles
+          </div>
+
+          <div>
+            <span>✓</span>
+            RideMate matching
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- Footer -->
+  <footer>
+
+    <span>© 2026 EzyRide</span>
+
+    <span>Ride • Match • Go</span>
+
+  </footer>
+
+</div>

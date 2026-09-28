@@ -1,0 +1,343 @@
+<div class="profile-page">
+
+  <!-- TOP NAVBAR -->
+  <header class="navbar">
+
+    <div class="brand">
+
+      <div class="logo-mark">
+        <span>↗</span>
+      </div>
+
+      <div>
+        <h2>EzyRide</h2>
+        <small>MAKING EVERY RIDE EASY</small>
+      </div>
+
+    </div>
+
+
+    <div class="nav-right">
+
+      <span class="page-name">
+        My Profile
+      </span>
+
+      <button
+        type="button"
+        class="logout-btn">
+        Logout
+      </button>
+
+    </div>
+
+  </header>
+
+
+  <!-- MAIN -->
+  <main class="profile-main">
+
+
+    <!-- LEFT PROFILE CARD -->
+    <section class="profile-card">
+
+      <div class="profile-header">
+
+        <div class="avatar">
+          {{ user.name ? user.name.charAt(0).toUpperCase() : 'U' }}
+        </div>
+
+        <div class="profile-heading">
+
+          <span class="account-label">
+            EzyRide MEMBER
+          </span>
+
+          <h1>
+            {{ user.name || 'User' }}
+          </h1>
+
+          <p>
+            {{ user.email }}
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="verified-badge">
+
+        <span>✓</span>
+
+        <div>
+          <strong>Verified Account</strong>
+          <small>Your EzyRide profile is active</small>
+        </div>
+
+      </div>
+
+
+      <!-- INFORMATION -->
+      <div class="section-title">
+
+        <div>
+          <span>PERSONAL INFORMATION</span>
+          <p>Manage your account details</p>
+        </div>
+
+        <button
+          *ngIf="!editMode"
+          type="button"
+          (click)="editProfile()"
+          class="edit-btn">
+          Edit
+        </button>
+
+      </div>
+
+
+      <div class="form-grid">
+
+
+        <!-- NAME -->
+        <div class="profile-field">
+
+          <label>FULL NAME</label>
+
+          <input
+            type="text"
+            name="name"
+            [(ngModel)]="user.name"
+            [readonly]="!editMode"
+          >
+
+        </div>
+
+
+        <!-- EMAIL -->
+        <div class="profile-field">
+
+          <label>EMAIL ADDRESS</label>
+
+          <input
+            type="email"
+            name="email"
+            [(ngModel)]="user.email"
+            [readonly]="!editMode"
+          >
+
+        </div>
+
+
+        <!-- PHONE -->
+        <div class="profile-field">
+
+          <label>PHONE NUMBER</label>
+
+          <input
+            type="text"
+            name="phone"
+            [(ngModel)]="user.phone"
+            [readonly]="!editMode"
+          >
+
+        </div>
+
+
+        <!-- ROLE -->
+        <div class="profile-field">
+
+          <label>ACCOUNT TYPE</label>
+
+          <input
+            type="text"
+            name="role"
+            [(ngModel)]="user.role"
+            readonly
+          >
+
+        </div>
+
+      </div>
+
+
+      <!-- EDIT BUTTONS -->
+      <div
+        class="action-buttons"
+        *ngIf="editMode">
+
+        <button
+          type="button"
+          class="save-btn"
+          (click)="updateProfile()">
+
+          Save Changes
+
+        </button>
+
+        <button
+          type="button"
+          class="cancel-btn"
+          (click)="cancelEdit()">
+
+          Cancel
+
+        </button>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- RIGHT SIDE -->
+    <aside class="side-section">
+
+
+      <!-- JOURNEY CARD -->
+      <div class="journey-card">
+
+        <span class="card-label">
+          YOUR EzyRide JOURNEY
+        </span>
+
+        <h2>
+          Ready for your<br>
+          next <span>ride?</span>
+        </h2>
+
+        <p>
+          Find a ride, connect with RideMate
+          and make every journey easier.
+        </p>
+
+
+        <div class="route-visual">
+
+          <div class="route-point">
+
+            <span class="point"></span>
+
+            <div>
+              <small>FROM</small>
+              <strong>Your location</strong>
+            </div>
+
+          </div>
+
+
+          <div class="route-line"></div>
+
+
+          <div class="route-point">
+
+            <span class="point destination"></span>
+
+            <div>
+              <small>TO</small>
+              <strong>Your destination</strong>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- ACCOUNT CARD -->
+      <div class="account-card">
+
+        <div class="card-title">
+
+          <div>
+            <span>ACCOUNT</span>
+            <h3>Your EzyRide status</h3>
+          </div>
+
+          <div class="status-dot"></div>
+
+        </div>
+
+
+        <div class="account-row">
+
+          <span>Role</span>
+
+          <strong>
+            {{ user.role || 'USER' }}
+          </strong>
+
+        </div>
+
+
+        <div class="account-row">
+
+          <span>Account</span>
+
+          <strong class="active">
+            Active
+          </strong>
+
+        </div>
+
+
+        <div class="account-row">
+
+          <span>Profile</span>
+
+          <strong class="complete">
+            Complete
+          </strong>
+
+        </div>
+
+      </div>
+
+
+      <!-- FEATURES -->
+      <div class="features-card">
+
+        <div class="feature-item">
+
+          <span class="feature-icon">🤝</span>
+
+          <div>
+            <strong>RideMate</strong>
+            <p>Find people going your way</p>
+          </div>
+
+        </div>
+
+
+        <div class="feature-item">
+
+          <span class="feature-icon">🛡</span>
+
+          <div>
+            <strong>Safe rides</strong>
+            <p>Verified profiles and trips</p>
+          </div>
+
+        </div>
+
+
+        <div class="feature-item">
+
+          <span class="feature-icon">🤖</span>
+
+          <div>
+            <strong>EzyTalk</strong>
+            <p>Get help whenever you need</p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </aside>
+
+  </main>
+
+</div>
